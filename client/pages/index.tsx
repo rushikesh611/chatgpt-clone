@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { PlusIcon } from "@heroicons/react/24/solid";
+import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
@@ -11,7 +12,24 @@ const Home: NextPage = () => {
         </div>
       </aside>
       <section className="flex-1 bg-[#343541] relative">
-        <div></div>
+        <div className="text-left">
+          <div className="">
+            <div className="p-3 px-6 mx-auto max-w-4xl flex">
+              <div className="w-10 h-10 bg-white rounded-md"></div>
+              <div className="px-10">Hello World</div>
+            </div>
+          </div>
+        </div>
+        <div className="text-left">
+          <div className="bg-[#444654]">
+            <div className="p-3 px-6 mx-auto max-w-4xl flex">
+              <div className="w-10 h-10 bg-[#0da37f] rounded-md">
+                <Image src="./logo.svg" alt="" width={40} height={40} />
+              </div>
+              <div className="px-10">bots will rule</div>
+            </div>
+          </div>
+        </div>
         <div className="p-3 flex justify-center absolute bottom-0 right-0 left-0">
           <textarea
             rows={1}
