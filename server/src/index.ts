@@ -18,15 +18,22 @@ app.use(cors());
 const port = 5000;
 
 app.post("/", async (req: any, res: any) => {
-  const { message } = req.body;
+  const { message, currentModel } = req.body;
   const response = await openai.createCompletion({
-    model: "text-davinci-003",
+    model: `${currentModel}`, //"text-davinci-003",
     prompt: `${message}`,
     max_tokens: 50,
     temperature: 0.5,
   });
   res.json({
     message: response.data.choices[0].text,
+  });
+});
+
+app.get("/models", async (res: any) => {
+  const response = await openai.listModels();
+  res.json({
+    models: response.data.data,
   });
 });
 
